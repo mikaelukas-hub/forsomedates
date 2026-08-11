@@ -527,8 +527,85 @@
 
         }
 
-    </script>
+    ```html
+<script>
+
+    function submitAvailability() {
+
+        const weekend1Date =
+            document.getElementById("weekend1-date").value;
+
+        const weekend1Time =
+            document.getElementById("weekend1-time").value;
+
+        const weekend2Date =
+            document.getElementById("weekend2-date").value;
+
+        const weekend2Time =
+            document.getElementById("weekend2-time").value;
+
+        const fridayDate =
+            document.getElementById("friday-date").value;
+
+        const fridayTime =
+            document.getElementById("friday-time").value;
 
 
-</body>
-</html>
+        /* Make sure everything is filled in */
+
+        if (
+            !weekend1Date ||
+            !weekend1Time ||
+            !weekend2Date ||
+            !weekend2Time ||
+            !fridayDate ||
+            !fridayTime
+        ) {
+
+            alert("Please fill in all 3 options first! 📋");
+
+            return;
+
+        }
+
+
+        /* Save her answers */
+
+        localStorage.setItem(
+            "weekend1Date",
+            weekend1Date
+        );
+
+        localStorage.setItem(
+            "weekend1Time",
+            weekend1Time
+        );
+
+        localStorage.setItem(
+            "weekend2Date",
+            weekend2Date
+        );
+
+        localStorage.setItem(
+            "weekend2Time",
+            weekend2Time
+        );
+
+        localStorage.setItem(
+            "fridayDate",
+            fridayDate
+        );
+
+        localStorage.setItem(
+            "fridayTime",
+            fridayTime
+        );
+
+
+        /* Continue to Page 4 */
+
+        window.location.href = "food.html";
+
+    }
+
+</script>
