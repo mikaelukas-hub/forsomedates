@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -66,7 +68,9 @@
 
         .subtitle {
             color: #5d704d;
+
             font-size: 16px;
+
             line-height: 1.5;
 
             margin-bottom: 25px;
@@ -112,6 +116,7 @@
 
         .option-title {
             font-size: 17px;
+
             font-weight: bold;
 
             color: #36582f;
@@ -135,6 +140,7 @@
             color: #526447;
 
             margin-top: 10px;
+
             margin-bottom: 6px;
         }
 
@@ -209,6 +215,8 @@
             color: #7a8867;
 
             margin-top: 15px;
+
+            line-height: 1.5;
         }
 
         .decoration {
@@ -250,11 +258,15 @@
         @keyframes float {
 
             0%, 100% {
-                transform: translateY(0) rotate(-3deg);
+                transform:
+                    translateY(0)
+                    rotate(-3deg);
             }
 
             50% {
-                transform: translateY(-10px) rotate(3deg);
+                transform:
+                    translateY(-10px)
+                    rotate(3deg);
             }
 
         }
@@ -272,10 +284,14 @@
         }
 
     </style>
+
 </head>
 
 
 <body>
+
+
+    <!-- Floating decorations -->
 
     <div class="decoration">📋</div>
     <div class="decoration">⭐</div>
@@ -287,6 +303,8 @@
 
         <div class="card">
 
+
+            <!-- HEADER -->
 
             <div class="header">
 
@@ -312,7 +330,7 @@
             </div>
 
 
-            <!-- WEEKEND OPTION 1 -->
+            <!-- WEEKEND 1 -->
 
             <div class="option">
 
@@ -359,7 +377,7 @@
             </div>
 
 
-            <!-- WEEKEND OPTION 2 -->
+            <!-- WEEKEND 2 -->
 
             <div class="option">
 
@@ -406,7 +424,7 @@
             </div>
 
 
-            <!-- FRIDAY OPTION -->
+            <!-- FRIDAY -->
 
             <div class="option">
 
@@ -456,17 +474,21 @@
             <!-- SUBMIT -->
 
             <button
+                type="button"
                 class="button"
                 onclick="submitAvailability()"
             >
+
                 SUBMIT AVAILABILITY 👍
+
             </button>
 
 
             <div class="note">
 
-                Choose carefully. This information
-                will be used for important mission planning. 😎
+                Choose carefully.
+                This information will be used for
+                important mission planning. 😎
 
             </div>
 
@@ -479,6 +501,8 @@
     <script>
 
         function submitAvailability() {
+
+            /* Get all the answers */
 
             const weekend1Date =
                 document.getElementById("weekend1-date").value;
@@ -501,13 +525,15 @@
                 document.getElementById("friday-time").value;
 
 
+            /* Make sure everything is filled */
+
             if (
-                !weekend1Date ||
-                !weekend1Time ||
-                !weekend2Date ||
-                !weekend2Time ||
-                !fridayDate ||
-                !fridayTime
+                weekend1Date === "" ||
+                weekend1Time === "" ||
+                weekend2Date === "" ||
+                weekend2Time === "" ||
+                fridayDate === "" ||
+                fridayTime === ""
             ) {
 
                 alert(
@@ -515,97 +541,52 @@
                 );
 
                 return;
+
             }
 
 
-            alert(
-                "Availability received! 👍"
+            /* Save the answers */
+
+            localStorage.setItem(
+                "weekend1Date",
+                weekend1Date
             );
 
+            localStorage.setItem(
+                "weekend1Time",
+                weekend1Time
+            );
+
+            localStorage.setItem(
+                "weekend2Date",
+                weekend2Date
+            );
+
+            localStorage.setItem(
+                "weekend2Time",
+                weekend2Time
+            );
+
+            localStorage.setItem(
+                "fridayDate",
+                fridayDate
+            );
+
+            localStorage.setItem(
+                "fridayTime",
+                fridayTime
+            );
+
+
+            /* Go to Page 4 */
 
             window.location.href = "food.html";
 
         }
 
-    ```html
-<script>
-
-    function submitAvailability() {
-
-        const weekend1Date =
-            document.getElementById("weekend1-date").value;
-
-        const weekend1Time =
-            document.getElementById("weekend1-time").value;
-
-        const weekend2Date =
-            document.getElementById("weekend2-date").value;
-
-        const weekend2Time =
-            document.getElementById("weekend2-time").value;
-
-        const fridayDate =
-            document.getElementById("friday-date").value;
-
-        const fridayTime =
-            document.getElementById("friday-time").value;
+    </script>
 
 
-        /* Make sure everything is filled in */
+</body>
 
-        if (
-            !weekend1Date ||
-            !weekend1Time ||
-            !weekend2Date ||
-            !weekend2Time ||
-            !fridayDate ||
-            !fridayTime
-        ) {
-
-            alert("Please fill in all 3 options first! 📋");
-
-            return;
-
-        }
-
-
-        /* Save her answers */
-
-        localStorage.setItem(
-            "weekend1Date",
-            weekend1Date
-        );
-
-        localStorage.setItem(
-            "weekend1Time",
-            weekend1Time
-        );
-
-        localStorage.setItem(
-            "weekend2Date",
-            weekend2Date
-        );
-
-        localStorage.setItem(
-            "weekend2Time",
-            weekend2Time
-        );
-
-        localStorage.setItem(
-            "fridayDate",
-            fridayDate
-        );
-
-        localStorage.setItem(
-            "fridayTime",
-            fridayTime
-        );
-
-
-        /* Continue to Page 4 */
-
-        window.location.href = "food.html";
-
-    }
-
-</script>
+</html>
