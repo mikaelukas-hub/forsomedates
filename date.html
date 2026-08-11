@@ -523,32 +523,20 @@
 
 
 
-            if (
-                !weekend1Date ||
-                !weekend1Time ||
-                !weekend2Date ||
-                !weekend2Time ||
-                !fridayDate ||
-                !fridayTime
-            ) {
+           if (
+    !weekend1Date ||
+    !weekend1Time ||
+    !weekend2Date ||
+    !weekend2Time ||
+    !fridayDate ||
+    !fridayTime
+) {
 
-                alert(
-                    "Please fill in all 3 options first! 📋"
-                );
+    alert("Please fill in all 3 options first! 📋");
 
-                return;
-            }
+    return;
+}
 
+alert("Availability received! 👍");
 
-
-            alert(
-                "Availability received! 👍"
-            );
-
-        }
-
-    </script>
-
-</body>
-</html>
-```
+window.location.href = "food.html";
