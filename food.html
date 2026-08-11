@@ -1,6 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -155,7 +157,8 @@
             gap: 10px;
         }
 
-        .view-button {
+        .view-button,
+        .choose-button {
             flex: 1;
 
             display: block;
@@ -168,17 +171,19 @@
 
             border-radius: 13px;
 
-            background: #fffef2;
-
-            color: #527d35;
-
-            border: 2px solid #8fbc5a;
-
             font-size: 14px;
 
             font-weight: bold;
 
             transition: 0.2s ease;
+        }
+
+        .view-button {
+            background: #fffef2;
+
+            color: #527d35;
+
+            border: 2px solid #8fbc5a;
         }
 
         .view-button:hover {
@@ -186,63 +191,19 @@
         }
 
         .choose-button {
-            flex: 1;
-
-            padding: 12px;
-
-            border-radius: 13px;
-
             background: #78a94d;
 
             color: white;
 
             border: 2px solid #527d35;
 
-            font-size: 14px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.2s ease;
+            box-shadow: 0 3px 0 #45682d;
         }
 
         .choose-button:hover {
             background: #8fbd5c;
-        }
 
-        .restaurant.selected {
-            border: 3px solid #78a94d;
-
-            background: #e9f6cf;
-
-            transform: scale(1.02);
-        }
-
-        .restaurant.selected .choose-button {
-            background: #f3c84b;
-
-            color: #4b3b10;
-
-            border-color: #c79d22;
-        }
-
-        .selected-text {
-            display: none;
-
-            margin-top: 10px;
-
-            text-align: center;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            color: #527d35;
-        }
-
-        .restaurant.selected .selected-text {
-            display: block;
+            transform: translateY(-2px);
         }
 
         .bottom-note {
@@ -326,10 +287,12 @@
         }
 
     </style>
+
 </head>
 
 
 <body>
+
 
     <!-- Floating decorations -->
 
@@ -357,17 +320,15 @@
                 </h1>
 
                 <p class="subtitle">
-                👀 Where are your taste buds currently taking you?    
-        
+                    👀 Where are your taste buds currently taking you?
                 </p>
 
             </div>
 
 
-
             <!-- JAPANESE -->
 
-            <div class="restaurant" id="japanese">
+            <div class="restaurant">
 
                 <div class="restaurant-top">
 
@@ -389,10 +350,12 @@
 
                 </div>
 
+
                 <div class="description">
                     Ramen time. 🍜
                     A solid choice if noodles are calling your name.
                 </div>
+
 
                 <div class="buttons">
 
@@ -404,17 +367,14 @@
                         VIEW RESTAURANT 🔎
                     </a>
 
-                    <button
+
+                    <a
+                        href="pickup.html"
                         class="choose-button"
-                        onclick="chooseRestaurant('japanese')"
                     >
                         PICK THIS 🍜
-                    </button>
+                    </a>
 
-                </div>
-
-                <div class="selected-text">
-                    ✓ Japanese has been selected!
                 </div>
 
             </div>
@@ -423,7 +383,7 @@
 
             <!-- VIETNAMESE -->
 
-            <div class="restaurant" id="vietnamese">
+            <div class="restaurant">
 
                 <div class="restaurant-top">
 
@@ -445,10 +405,12 @@
 
                 </div>
 
+
                 <div class="description">
                     Pho time. 🍲
                     Warm, comforting and ready for serious slurping.
                 </div>
+
 
                 <div class="buttons">
 
@@ -460,17 +422,14 @@
                         VIEW RESTAURANT 🔎
                     </a>
 
-                    <button
+
+                    <a
+                        href="pickup.html"
                         class="choose-button"
-                        onclick="chooseRestaurant('vietnamese')"
                     >
                         PICK THIS 🍲
-                    </button>
+                    </a>
 
-                </div>
-
-                <div class="selected-text">
-                    ✓ Vietnamese has been selected!
                 </div>
 
             </div>
@@ -479,7 +438,7 @@
 
             <!-- KOREAN -->
 
-            <div class="restaurant" id="korean">
+            <div class="restaurant">
 
                 <div class="restaurant-top">
 
@@ -501,10 +460,12 @@
 
                 </div>
 
+
                 <div class="description">
                     Korean food has entered the chat. 🥩
                     Grill, eat, repeat.
                 </div>
+
 
                 <div class="buttons">
 
@@ -516,17 +477,14 @@
                         VIEW RESTAURANT 🔎
                     </a>
 
-                    <button
+
+                    <a
+                        href="pickup.html"
                         class="choose-button"
-                        onclick="chooseRestaurant('korean')"
                     >
                         PICK THIS 🥩
-                    </button>
+                    </a>
 
-                </div>
-
-                <div class="selected-text">
-                    ✓ Korean has been selected!
                 </div>
 
             </div>
@@ -535,7 +493,7 @@
 
             <!-- ITALIAN -->
 
-            <div class="restaurant" id="italian">
+            <div class="restaurant">
 
                 <div class="restaurant-top">
 
@@ -557,10 +515,12 @@
 
                 </div>
 
+
                 <div class="description">
                     Pasta? Pizza? Italian food?
                     We respect the classics. 🍝
                 </div>
+
 
                 <div class="buttons">
 
@@ -572,27 +532,29 @@
                         VIEW RESTAURANT 🔎
                     </a>
 
-                    <button
+
+                    <a
+                        href="pickup.html"
                         class="choose-button"
-                        onclick="chooseRestaurant('italian')"
                     >
                         PICK THIS 🍝
-                    </button>
+                    </a>
 
-                </div>
-
-                <div class="selected-text">
-                    ✓ Italian has been selected!
                 </div>
 
             </div>
 
 
 
+            <!-- BOTTOM NOTE -->
+
             <div class="bottom-note">
+
                 You may inspect all four options before choosing.
+
                 <br>
-                No food critic certification required. 😎
+                
+
             </div>
 
 
@@ -600,69 +562,6 @@
 
     </div>
 
-
-
-    <script>
-
-        function chooseRestaurant(selectedId) {
-
-            const restaurants =
-                document.querySelectorAll(".restaurant");
-
-            restaurants.forEach(function(restaurant) {
-
-                restaurant.classList.remove("selected");
-
-            });
-
-
-            const selected =
-                document.getElementById(selectedId);
-
-            selected.classList.add("selected");
-
-
-            selected.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-        }
-```html
-<script>
-
-    function chooseRestaurant(selectedId) {
-
-        const restaurants =
-            document.querySelectorAll(".restaurant");
-
-        restaurants.forEach(function(restaurant) {
-
-            restaurant.classList.remove("selected");
-
-        });
-
-
-        const selected =
-            document.getElementById(selectedId);
-
-        selected.classList.add("selected");
-
-
-        /*
-            Give her a moment to see her choice,
-            then continue to Page 5.
-        */
-
-        setTimeout(function() {
-
-            window.location.href = "pickup.html";
-
-        }, 900);
-
-    }
-
-</script>
-
 </body>
 </html>
+```
