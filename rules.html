@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Little Question 💌</title>
+    <title>Rules & Regulations</title>
 
     <style>
         * {
@@ -17,38 +18,41 @@
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #fff0f5, #ffe4ec);
-            color: #4a2935;
-            overflow: hidden;
+            background: linear-gradient(135deg, #e8f5c8, #fff3a6);
+            color: #29402b;
+            overflow-x: hidden;
         }
 
         .page {
-            width: 90%;
-            max-width: 520px;
-            padding: 40px 25px;
-            text-align: center;
+            width: 92%;
+            max-width: 560px;
+            padding: 35px 0;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.9);
+            background: #fffef2;
+            border: 4px solid #8fbc5a;
             border-radius: 30px;
             padding: 35px 25px;
-            box-shadow: 0 20px 50px rgba(190, 100, 130, 0.2);
+            box-shadow: 0 15px 0 #6d9845;
         }
 
-        .emoji {
+        .header-icon {
             font-size: 55px;
-            margin-bottom: 10px;
+            text-align: center;
+            margin-bottom: 5px;
         }
 
         h1 {
-            font-size: 30px;
-            margin: 10px 0 15px;
+            text-align: center;
+            font-size: 31px;
+            margin: 5px 0 10px;
         }
 
         .subtitle {
-            color: #76515e;
-            font-size: 17px;
+            text-align: center;
+            color: #5d704d;
+            font-size: 16px;
             margin-bottom: 25px;
         }
 
@@ -56,16 +60,23 @@
             display: flex;
             align-items: center;
             text-align: left;
-            background: #fff7fa;
+            background: #f3f8df;
+            border: 2px solid #c6d99a;
             border-radius: 18px;
             padding: 15px;
-            margin: 12px 0;
-            border: 1px solid #ffe0e9;
+            margin: 13px 0;
+            transition: transform 0.2s ease;
         }
 
-        .rule-emoji {
+        .rule:hover {
+            transform: translateX(5px);
+        }
+
+        .rule-icon {
+            min-width: 48px;
             font-size: 30px;
-            margin-right: 15px;
+            text-align: center;
+            margin-right: 12px;
         }
 
         .rule-text {
@@ -75,68 +86,95 @@
 
         .rule-text strong {
             display: block;
-            font-size: 16px;
-            margin-bottom: 3px;
-            color: #542f3d;
+            font-size: 17px;
+            margin-bottom: 4px;
+            color: #36582f;
         }
 
-        button {
-            width: 100%;
-            border: none;
+        .button {
+            display: block;
+            text-align: center;
+            text-decoration: none;
             padding: 17px 25px;
-            margin-top: 22px;
-            border-radius: 50px;
+            margin-top: 25px;
+            border-radius: 18px;
             font-size: 17px;
             font-weight: bold;
-            cursor: pointer;
-            background: #ff7fa3;
+            background: #78a94d;
             color: white;
-            transition: all 0.25s ease;
+            border: 3px solid #527d35;
+            box-shadow: 0 5px 0 #45682d;
+            transition: all 0.15s ease;
         }
 
-        button:hover {
-            transform: scale(1.04);
-            background: #ff5f8b;
-            box-shadow: 0 8px 20px rgba(255, 95, 139, 0.3);
+        .button:hover {
+            transform: translateY(-3px);
+            background: #8fbd5c;
         }
 
-        .heart {
+        .button:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #45682d;
+        }
+
+        .small-note {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 13px;
+            color: #7a8867;
+        }
+
+        .decoration {
             position: absolute;
-            font-size: 25px;
-            animation: float 5s infinite ease-in-out;
-            opacity: 0.6;
+            font-size: 32px;
+            opacity: 0.75;
+            animation: float 4s infinite ease-in-out;
         }
 
-        .heart:nth-child(1) {
-            left: 8%;
+        .decoration:nth-child(1) {
+            left: 7%;
             top: 15%;
         }
 
-        .heart:nth-child(2) {
-            right: 10%;
+        .decoration:nth-child(2) {
+            right: 8%;
             top: 20%;
             animation-delay: 1s;
         }
 
-        .heart:nth-child(3) {
-            left: 12%;
+        .decoration:nth-child(3) {
+            left: 10%;
             bottom: 15%;
             animation-delay: 2s;
         }
 
-        .heart:nth-child(4) {
-            right: 12%;
+        .decoration:nth-child(4) {
+            right: 10%;
             bottom: 18%;
             animation-delay: 3s;
         }
 
         @keyframes float {
             0%, 100% {
-                transform: translateY(0);
+                transform: translateY(0) rotate(-3deg);
             }
 
             50% {
-                transform: translateY(-15px);
+                transform: translateY(-10px) rotate(3deg);
+            }
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 27px;
+            }
+
+            .card {
+                padding: 30px 18px;
+            }
+
+            .rule-text {
+                font-size: 14px;
             }
         }
     </style>
@@ -144,70 +182,67 @@
 
 <body>
 
-    <div class="heart">💗</div>
-    <div class="heart">💕</div>
-    <div class="heart">🌷</div>
-    <div class="heart">💌</div>
+    <div class="decoration">🌱</div>
+    <div class="decoration">☀️</div>
+    <div class="decoration">🍀</div>
+    <div class="decoration">⭐</div>
 
     <div class="page">
 
         <div class="card">
 
-            <div class="emoji">📜</div>
+            <div class="header-icon">📋</div>
 
             <h1>Rules & Regulations</h1>
 
             <p class="subtitle">
-                Please read the following extremely important rules carefully.
+                Please review the extremely serious terms of this mission.
             </p>
 
             <div class="rule">
-                <div class="rule-emoji">📅</div>
+                <div class="rule-icon">📅</div>
                 <div class="rule-text">
                     <strong>Choose your date wisely</strong>
-                    Pick a day when you're free and ready for a little adventure.
+                    Make sure you've got nothing else planned.
                 </div>
             </div>
 
             <div class="rule">
-                <div class="rule-emoji">🕐</div>
+                <div class="rule-icon">⏰</div>
                 <div class="rule-text">
                     <strong>Choose your time wisely</strong>
-                    Please make sure you're available at the selected time.
+                    Please arrive at the agreed time. Being fashionably late is still late.
                 </div>
             </div>
 
             <div class="rule">
-                <div class="rule-emoji">👗</div>
+                <div class="rule-icon">👟</div>
                 <div class="rule-text">
                     <strong>Wear comfortable clothes</strong>
-                    There may or may not be a tiny adventure involved. 👀
+                    There may be walking. There may be exploring. You have been warned.
                 </div>
             </div>
 
             <div class="rule">
-                <div class="rule-emoji">💗</div>
+                <div class="rule-icon">😎</div>
                 <div class="rule-text">
-                    <strong>Most importantly: have fun</strong>
-                    No pressure, no stress — just enjoy the day together. ♡
+                    <strong>Bring your best mood</strong>
+                    Complaining is permitted. Having fun is mandatory.
                 </div>
             </div>
 
-          <button onclick="location.href='date.html'">
-    I ACCEPT THE TERMS 💗
-  </button>
+            <a href="date.html" class="button">
+                I UNDERSTAND 👍
+            </a>
+
+            <div class="small-note">
+                By clicking the button, you agree to absolutely nothing legally binding.
+            </div>
 
         </div>
 
     </div>
 
-    <script>
-        function nextPage() {
-            alert("Excellent decision. 😌💗");
-        }
-    </script>
-
 </body>
 </html>
 ```
-
