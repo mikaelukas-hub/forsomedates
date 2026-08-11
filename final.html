@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mission Confirmed</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #e8f5c8,
+                #fff3a6
+            );
+
+            color: #29402b;
+
+            padding: 25px;
+        }
+
+        .card {
+
+            width: 100%;
+            max-width: 560px;
+
+            background: #fffef2;
+
+            border: 4px solid #8fbc5a;
+
+            border-radius: 30px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            box-shadow: 0 15px 0 #6d9845;
+
+        }
+
+        .icon {
+
+            font-size: 70px;
+
+            margin-bottom: 10px;
+
+            animation: bounce 1.5s infinite ease-in-out;
+
+        }
+
+        h1 {
+
+            font-size: 32px;
+
+            margin: 5px 0 12px;
+
+            color: #36582f;
+
+        }
+
+        .main-text {
+
+            font-size: 19px;
+
+            line-height: 1.6;
+
+            color: #526447;
+
+            margin-bottom: 25px;
+
+        }
+
+        .confirmation {
+
+            background: #f3f8df;
+
+            border: 2px solid #c6d99a;
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            margin: 20px 0;
+
+        }
+
+        .confirmation-title {
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            color: #36582f;
+
+            margin-bottom: 8px;
+
+        }
+
+        .confirmation-text {
+
+            font-size: 15px;
+
+            line-height: 1.5;
+
+            color: #66765a;
+
+        }
+
+        .final-message {
+
+            font-size: 17px;
+
+            line-height: 1.5;
+
+            color: #527d35;
+
+            font-weight: bold;
+
+            margin-top: 25px;
+
+        }
+
+        .small-note {
+
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            color: #7a8867;
+
+        }
+
+        .decoration {
+
+            position: fixed;
+
+            font-size: 32px;
+
+            opacity: 0.7;
+
+            animation: float 4s infinite ease-in-out;
+
+        }
+
+        .decoration:nth-child(1) {
+
+            left: 8%;
+            top: 15%;
+
+        }
+
+        .decoration:nth-child(2) {
+
+            right: 8%;
+            top: 20%;
+
+            animation-delay: 1s;
+
+        }
+
+        .decoration:nth-child(3) {
+
+            left: 10%;
+            bottom: 15%;
+
+            animation-delay: 2s;
+
+        }
+
+        .decoration:nth-child(4) {
+
+            right: 10%;
+            bottom: 18%;
+
+            animation-delay: 3s;
+
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0)
+                    rotate(-3deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-10px)
+                    rotate(3deg);
+
+            }
+
+        }
+
+        @keyframes bounce {
+
+            0%, 100% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-8px);
+
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            h1 {
+
+                font-size: 28px;
+
+            }
+
+            .card {
+
+                padding: 35px 22px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Floating decorations -->
+
+    <div class="decoration">⭐</div>
+
+    <div class="decoration">📋</div>
+
+    <div class="decoration">🗺️</div>
+
+    <div class="decoration">👍</div>
+
+
+    <div class="card">
+
+
+        <div class="icon">
+            🎉
+        </div>
+
+
+        <h1>
+            Reservation Confirmed!
+        </h1>
+
+
+        <p class="main-text">
+
+            Your plan and date are officially
+            <strong>finalized.</strong> 😎
+
+        </p>
+
+
+        <div class="confirmation">
+
+            <div class="confirmation-title">
+                📋 What's next?
+            </div>
+
+            <div class="confirmation-text">
+
+                The handsome fella will contact you
+                with the final details.
+
+                <br><br>
+
+                No worries. Your only job now
+                is to show up. 👍
+
+            </div>
+
+        </div>
+
+
+        <div class="final-message">
+
+            See you when the mission begins. 🫡
+
+        </div>
+
+
+        <div class="small-note">
+
+            Thank you for completing the extremely
+            important questionnaire.
+
+            <br>
+
+            Your cooperation has been noted. 😌
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
