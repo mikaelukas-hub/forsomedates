@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>One Last Thing</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #e8f5c8,
+                #fff3a6
+            );
+
+            color: #29402b;
+
+            padding: 25px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 540px;
+
+            background: #fffef2;
+
+            border: 4px solid #8fbc5a;
+
+            border-radius: 30px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            box-shadow: 0 15px 0 #6d9845;
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin: 5px 0 12px;
+
+            color: #36582f;
+        }
+
+        .subtitle {
+            font-size: 17px;
+
+            line-height: 1.5;
+
+            color: #66765a;
+
+            margin-bottom: 30px;
+        }
+
+        .question {
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #36582f;
+
+            margin-bottom: 22px;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .choice {
+            display: block;
+
+            width: 100%;
+
+            padding: 17px 20px;
+
+            border-radius: 18px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            color: white;
+
+            background: #78a94d;
+
+            border: 3px solid #527d35;
+
+            box-shadow: 0 5px 0 #45682d;
+
+            transition: 0.15s ease;
+        }
+
+        .choice:hover {
+            background: #8fbd5c;
+
+            transform: translateY(-2px);
+        }
+
+        .choice:active {
+            transform: translateY(3px);
+
+            box-shadow: 0 2px 0 #45682d;
+        }
+
+        .choice.no {
+            background: #f0c84b;
+
+            color: #4b3b10;
+
+            border-color: #c59b25;
+
+            box-shadow: 0 5px 0 #a77e18;
+        }
+
+        .choice.no:hover {
+            background: #f5d263;
+        }
+
+        .small-note {
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            color: #7a8867;
+        }
+
+        .decoration {
+            position: fixed;
+
+            font-size: 32px;
+
+            opacity: 0.7;
+
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .decoration:nth-child(1) {
+            left: 8%;
+            top: 15%;
+        }
+
+        .decoration:nth-child(2) {
+            right: 8%;
+            top: 20%;
+
+            animation-delay: 1s;
+        }
+
+        .decoration:nth-child(3) {
+            left: 10%;
+            bottom: 15%;
+
+            animation-delay: 2s;
+        }
+
+        .decoration:nth-child(4) {
+            right: 10%;
+            bottom: 18%;
+
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(3deg);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="decoration">🚗</div>
+    <div class="decoration">🗺️</div>
+    <div class="decoration">⭐</div>
+    <div class="decoration">🌱</div>
+
+
+    <div class="card">
+
+        <div class="icon">
+            🚗
+        </div>
+
+        <h1>
+            One last thing...
+        </h1>
+
+        <p class="subtitle">
+            Just sorting out one tiny detail
+            before the mission is officially planned. 😎
+        </p>
+
+        <div class="question">
+            Would you like me to pick you up?
+        </div>
+
+
+        <div class="choices">
+
+            <a
+                href="final.html"
+                class="choice"
+            >
+                YES, PLEASE — I WOULD LOVE THAT 🚗
+            </a>
+
+
+            <a
+                href="final.html"
+                class="choice no"
+            >
+                NO, I'M FINE GOING ALONE 👍
+            </a>
+
+        </div>
+
+
+        <div class="small-note">
+            Totally up to you — no pressure! 😌
+        </div>
+
+    </div>
+
+</body>
+</html>
