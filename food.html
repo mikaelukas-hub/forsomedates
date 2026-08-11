@@ -628,8 +628,41 @@
             });
 
         }
+```html
+<script>
 
-    </script>
+    function chooseRestaurant(selectedId) {
+
+        const restaurants =
+            document.querySelectorAll(".restaurant");
+
+        restaurants.forEach(function(restaurant) {
+
+            restaurant.classList.remove("selected");
+
+        });
+
+
+        const selected =
+            document.getElementById(selectedId);
+
+        selected.classList.add("selected");
+
+
+        /*
+            Give her a moment to see her choice,
+            then continue to Page 5.
+        */
+
+        setTimeout(function() {
+
+            window.location.href = "pickup.html";
+
+        }, 900);
+
+    }
+
+</script>
 
 </body>
 </html>
