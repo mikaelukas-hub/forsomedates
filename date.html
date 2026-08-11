@@ -473,15 +473,17 @@
 
             <!-- SUBMIT -->
 
-            <button
-                type="button"
-                class="button"
-                onclick="submitAvailability()"
-            >
+            ```html
+<a
+    href="food.html"
+    class="button"
+    onclick="saveAvailability()"
+    style="display: block; text-decoration: none; text-align: center;"
+>
+    SUBMIT AVAILABILITY 👍
+</a>
+```
 
-                SUBMIT AVAILABILITY 👍
-
-            </button>
 
 
             <div class="note">
@@ -498,95 +500,62 @@
     </div>
 
 
-    <script>
+    ```html
+<script>
 
-        function submitAvailability() {
+    function saveAvailability() {
 
-            /* Get all the answers */
+        const weekend1Date =
+            document.getElementById("weekend1-date").value;
 
-            const weekend1Date =
-                document.getElementById("weekend1-date").value;
+        const weekend1Time =
+            document.getElementById("weekend1-time").value;
 
-            const weekend1Time =
-                document.getElementById("weekend1-time").value;
+        const weekend2Date =
+            document.getElementById("weekend2-date").value;
 
+        const weekend2Time =
+            document.getElementById("weekend2-time").value;
 
-            const weekend2Date =
-                document.getElementById("weekend2-date").value;
+        const fridayDate =
+            document.getElementById("friday-date").value;
 
-            const weekend2Time =
-                document.getElementById("weekend2-time").value;
-
-
-            const fridayDate =
-                document.getElementById("friday-date").value;
-
-            const fridayTime =
-                document.getElementById("friday-time").value;
+        const fridayTime =
+            document.getElementById("friday-time").value;
 
 
-            /* Make sure everything is filled */
+        /* Save everything */
 
-            if (
-                weekend1Date === "" ||
-                weekend1Time === "" ||
-                weekend2Date === "" ||
-                weekend2Time === "" ||
-                fridayDate === "" ||
-                fridayTime === ""
-            ) {
+        localStorage.setItem(
+            "weekend1Date",
+            weekend1Date
+        );
 
-                alert(
-                    "Please fill in all 3 options first! 📋"
-                );
+        localStorage.setItem(
+            "weekend1Time",
+            weekend1Time
+        );
 
-                return;
+        localStorage.setItem(
+            "weekend2Date",
+            weekend2Date
+        );
 
-            }
+        localStorage.setItem(
+            "weekend2Time",
+            weekend2Time
+        );
 
+        localStorage.setItem(
+            "fridayDate",
+            fridayDate
+        );
 
-            /* Save the answers */
+        localStorage.setItem(
+            "fridayTime",
+            fridayTime
+        );
 
-            localStorage.setItem(
-                "weekend1Date",
-                weekend1Date
-            );
+    }
 
-            localStorage.setItem(
-                "weekend1Time",
-                weekend1Time
-            );
-
-            localStorage.setItem(
-                "weekend2Date",
-                weekend2Date
-            );
-
-            localStorage.setItem(
-                "weekend2Time",
-                weekend2Time
-            );
-
-            localStorage.setItem(
-                "fridayDate",
-                fridayDate
-            );
-
-            localStorage.setItem(
-                "fridayTime",
-                fridayTime
-            );
-
-
-            /* Go to Page 4 */
-
-            window.location.href = "food.html";
-
-        }
-
-    </script>
-
-
-</body>
-
-</html>
+</script>
