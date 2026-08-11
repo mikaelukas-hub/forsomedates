@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pick Your Food </title>
+    <title>Pick Your Food Mission</title>
 
     <style>
 
@@ -158,7 +158,6 @@
 
         .view-button,
         .choose-button {
-
             flex: 1;
 
             display: block;
@@ -180,11 +179,9 @@
             cursor: pointer;
 
             transition: 0.2s ease;
-
         }
 
         .view-button {
-
             background: #fffef2;
 
             color: #527d35;
@@ -197,7 +194,6 @@
         }
 
         .choose-button {
-
             background: #78a94d;
 
             color: white;
@@ -208,14 +204,17 @@
         }
 
         .choose-button:hover {
-
             background: #8fbd5c;
 
             transform: translateY(-2px);
         }
 
-        .selected {
+        .choose-button:disabled {
+            cursor: default;
+            opacity: 0.8;
+        }
 
+        .selected {
             border-color: #527d35;
 
             background: #e9f6cf;
@@ -224,7 +223,6 @@
         }
 
         .selected .choose-button {
-
             background: #f3c84b;
 
             color: #4b3b10;
@@ -233,7 +231,6 @@
         }
 
         .selected-text {
-
             display: none;
 
             margin-top: 10px;
@@ -252,7 +249,6 @@
         }
 
         .bottom-note {
-
             text-align: center;
 
             color: #7a8867;
@@ -265,7 +261,6 @@
         }
 
         .decoration {
-
             position: fixed;
 
             font-size: 32px;
@@ -304,11 +299,15 @@
         @keyframes float {
 
             0%, 100% {
-                transform: translateY(0) rotate(-3deg);
+                transform:
+                    translateY(0)
+                    rotate(-3deg);
             }
 
             50% {
-                transform: translateY(-10px) rotate(3deg);
+                transform:
+                    translateY(-10px)
+                    rotate(3deg);
             }
 
         }
@@ -341,7 +340,7 @@
 <body>
 
 
-    <!-- DECORATIONS -->
+    <!-- Floating decorations -->
 
     <div class="decoration">🍃</div>
     <div class="decoration">⭐</div>
@@ -373,6 +372,7 @@
             </div>
 
 
+
             <!-- JAPANESE -->
 
             <div class="restaurant" id="japanese">
@@ -397,11 +397,10 @@
 
                 </div>
 
-                <div class="description">
 
+                <div class="description">
                     Ramen time. 🍜
                     A solid choice if noodles are calling your name.
-
                 </div>
 
 
@@ -419,7 +418,7 @@
                     <button
                         type="button"
                         class="choose-button"
-                        onclick="chooseRestaurant('japanese')"
+                        onclick="chooseRestaurant('japanese', 'Japanese — Ikkudo Ichi')"
                     >
                         PICK THIS 🍜
                     </button>
@@ -428,7 +427,7 @@
 
 
                 <div class="selected-text">
-                    ✓ Japanese selected! Preparing the next step...
+                    ✓ Japanese selected! Moving to the next step...
                 </div>
 
             </div>
@@ -461,10 +460,8 @@
 
 
                 <div class="description">
-
                     Pho time. 🍲
                     Warm, comforting and ready for serious slurping.
-
                 </div>
 
 
@@ -482,7 +479,7 @@
                     <button
                         type="button"
                         class="choose-button"
-                        onclick="chooseRestaurant('vietnamese')"
+                        onclick="chooseRestaurant('vietnamese', 'Vietnamese — Pho 24')"
                     >
                         PICK THIS 🍲
                     </button>
@@ -491,7 +488,7 @@
 
 
                 <div class="selected-text">
-                    ✓ Vietnamese selected! Preparing the next step...
+                    ✓ Vietnamese selected! Moving to the next step...
                 </div>
 
             </div>
@@ -524,10 +521,8 @@
 
 
                 <div class="description">
-
                     Korean food has entered the chat. 🥩
                     Grill, eat, repeat.
-
                 </div>
 
 
@@ -545,7 +540,7 @@
                     <button
                         type="button"
                         class="choose-button"
-                        onclick="chooseRestaurant('korean')"
+                        onclick="chooseRestaurant('korean', 'Korean — SAMWON by Samwon Garden')"
                     >
                         PICK THIS 🥩
                     </button>
@@ -554,7 +549,7 @@
 
 
                 <div class="selected-text">
-                    ✓ Korean selected! Preparing the next step...
+                    ✓ Korean selected! Moving to the next step...
                 </div>
 
             </div>
@@ -587,9 +582,8 @@
 
 
                 <div class="description">
-
-                    Pasta? Pizza? Lasagna? 🍝
-
+                    Pasta? Pizza? Italian food?
+                    We respect the classics. 🍝
                 </div>
 
 
@@ -607,7 +601,7 @@
                     <button
                         type="button"
                         class="choose-button"
-                        onclick="chooseRestaurant('italian')"
+                        onclick="chooseRestaurant('italian', 'Western / Italian — Caffe Milano')"
                     >
                         PICK THIS 🍝
                     </button>
@@ -616,10 +610,11 @@
 
 
                 <div class="selected-text">
-                    ✓ Italian selected! Preparing the next step...
+                    ✓ Italian selected! Moving to the next step...
                 </div>
 
             </div>
+
 
 
             <div class="bottom-note">
@@ -641,26 +636,46 @@
 
     <script>
 
-        function chooseRestaurant(selectedId) {
+        function chooseRestaurant(selectedId, restaurantName) {
 
             /*
-             * Find the selected restaurant
+             * Remove previous selections
              */
 
-            const selected =
-                document.getElementById(selectedId);
+            const restaurants =
+                document.querySelectorAll(".restaurant");
+
+            restaurants.forEach(function(restaurant) {
+
+                restaurant.classList.remove("selected");
+
+            });
 
 
             /*
              * Highlight the selected restaurant
              */
 
+            const selected =
+                document.getElementById(selectedId);
+
             selected.classList.add("selected");
 
 
             /*
-             * Disable all PICK THIS buttons
-             * so it cannot be clicked twice.
+             * Save the restaurant choice
+             * so pickup.html can use it later.
+             */
+
+            localStorage.setItem(
+                "selectedFood",
+                restaurantName
+            );
+
+
+            /*
+             * Disable all food buttons
+             * after making a choice.
              */
 
             const buttons =
@@ -674,13 +689,13 @@
 
 
             /*
-             * Wait a tiny moment so she can
-             * see her selection.
+             * Give her a short moment
+             * to see her choice.
              */
 
             setTimeout(function() {
 
-                window.location.assign("pickup.html");
+                window.location.href = "pickup.html";
 
             }, 700);
 
