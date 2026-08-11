@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pick Your Food </title>
+    <title>Pick Your Food Mission</title>
 
     <style>
 
@@ -55,7 +56,6 @@
 
         .header-icon {
             font-size: 58px;
-            margin-bottom: 5px;
         }
 
         h1 {
@@ -80,11 +80,11 @@
 
             margin-bottom: 16px;
 
-            transition: 0.2s ease;
+            transition: 0.25s ease;
         }
 
         .restaurant:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
 
             box-shadow:
                 0 7px 15px rgba(70, 100, 40, 0.12);
@@ -158,9 +158,12 @@
 
         .view-button,
         .choose-button {
+
             flex: 1;
 
             display: block;
+
+            width: 100%;
 
             text-align: center;
 
@@ -174,10 +177,14 @@
 
             font-weight: bold;
 
+            cursor: pointer;
+
             transition: 0.2s ease;
+
         }
 
         .view-button {
+
             background: #fffef2;
 
             color: #527d35;
@@ -190,6 +197,7 @@
         }
 
         .choose-button {
+
             background: #78a94d;
 
             color: white;
@@ -200,12 +208,51 @@
         }
 
         .choose-button:hover {
+
             background: #8fbd5c;
 
             transform: translateY(-2px);
         }
 
+        .selected {
+
+            border-color: #527d35;
+
+            background: #e9f6cf;
+
+            transform: scale(1.02);
+        }
+
+        .selected .choose-button {
+
+            background: #f3c84b;
+
+            color: #4b3b10;
+
+            border-color: #c79d22;
+        }
+
+        .selected-text {
+
+            display: none;
+
+            margin-top: 10px;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            color: #527d35;
+        }
+
+        .selected .selected-text {
+            display: block;
+        }
+
         .bottom-note {
+
             text-align: center;
 
             color: #7a8867;
@@ -218,6 +265,7 @@
         }
 
         .decoration {
+
             position: fixed;
 
             font-size: 32px;
@@ -293,7 +341,7 @@
 <body>
 
 
-    <!-- Floating decorations -->
+    <!-- DECORATIONS -->
 
     <div class="decoration">🍃</div>
     <div class="decoration">⭐</div>
@@ -327,7 +375,7 @@
 
             <!-- JAPANESE -->
 
-            <div class="restaurant">
+            <div class="restaurant" id="japanese">
 
                 <div class="restaurant-top">
 
@@ -349,10 +397,11 @@
 
                 </div>
 
-
                 <div class="description">
+
                     Ramen time. 🍜
                     A solid choice if noodles are calling your name.
+
                 </div>
 
 
@@ -367,13 +416,19 @@
                     </a>
 
 
-                    <a
-                        href="pickup.html"
+                    <button
+                        type="button"
                         class="choose-button"
+                        onclick="chooseRestaurant('japanese')"
                     >
                         PICK THIS 🍜
-                    </a>
+                    </button>
 
+                </div>
+
+
+                <div class="selected-text">
+                    ✓ Japanese selected! Preparing the next step...
                 </div>
 
             </div>
@@ -382,7 +437,7 @@
 
             <!-- VIETNAMESE -->
 
-            <div class="restaurant">
+            <div class="restaurant" id="vietnamese">
 
                 <div class="restaurant-top">
 
@@ -406,8 +461,10 @@
 
 
                 <div class="description">
+
                     Pho time. 🍲
                     Warm, comforting and ready for serious slurping.
+
                 </div>
 
 
@@ -422,13 +479,19 @@
                     </a>
 
 
-                    <a
-                        href="pickup.html"
+                    <button
+                        type="button"
                         class="choose-button"
+                        onclick="chooseRestaurant('vietnamese')"
                     >
                         PICK THIS 🍲
-                    </a>
+                    </button>
 
+                </div>
+
+
+                <div class="selected-text">
+                    ✓ Vietnamese selected! Preparing the next step...
                 </div>
 
             </div>
@@ -437,7 +500,7 @@
 
             <!-- KOREAN -->
 
-            <div class="restaurant">
+            <div class="restaurant" id="korean">
 
                 <div class="restaurant-top">
 
@@ -461,8 +524,10 @@
 
 
                 <div class="description">
+
                     Korean food has entered the chat. 🥩
                     Grill, eat, repeat.
+
                 </div>
 
 
@@ -477,13 +542,19 @@
                     </a>
 
 
-                    <a
-                        href="pickup.html"
+                    <button
+                        type="button"
                         class="choose-button"
+                        onclick="chooseRestaurant('korean')"
                     >
                         PICK THIS 🥩
-                    </a>
+                    </button>
 
+                </div>
+
+
+                <div class="selected-text">
+                    ✓ Korean selected! Preparing the next step...
                 </div>
 
             </div>
@@ -492,7 +563,7 @@
 
             <!-- ITALIAN -->
 
-            <div class="restaurant">
+            <div class="restaurant" id="italian">
 
                 <div class="restaurant-top">
 
@@ -516,8 +587,10 @@
 
 
                 <div class="description">
+
                     Pasta? Pizza? Italian food?
                     We respect the classics. 🍝
+
                 </div>
 
 
@@ -532,27 +605,31 @@
                     </a>
 
 
-                    <a
-                        href="pickup.html"
+                    <button
+                        type="button"
                         class="choose-button"
+                        onclick="chooseRestaurant('italian')"
                     >
                         PICK THIS 🍝
-                    </a>
+                    </button>
 
+                </div>
+
+
+                <div class="selected-text">
+                    ✓ Italian selected! Preparing the next step...
                 </div>
 
             </div>
 
-
-
-            <!-- BOTTOM NOTE -->
 
             <div class="bottom-note">
 
                 You may inspect all four options before choosing.
 
                 <br>
-                
+
+                No food critic certification required. 😎
 
             </div>
 
@@ -561,5 +638,58 @@
 
     </div>
 
+
+
+    <script>
+
+        function chooseRestaurant(selectedId) {
+
+            /*
+             * Find the selected restaurant
+             */
+
+            const selected =
+                document.getElementById(selectedId);
+
+
+            /*
+             * Highlight the selected restaurant
+             */
+
+            selected.classList.add("selected");
+
+
+            /*
+             * Disable all PICK THIS buttons
+             * so it cannot be clicked twice.
+             */
+
+            const buttons =
+                document.querySelectorAll(".choose-button");
+
+            buttons.forEach(function(button) {
+
+                button.disabled = true;
+
+            });
+
+
+            /*
+             * Wait a tiny moment so she can
+             * see her selection.
+             */
+
+            setTimeout(function() {
+
+                window.location.assign("pickup.html");
+
+            }, 700);
+
+        }
+
+    </script>
+
+
 </body>
+
 </html>
